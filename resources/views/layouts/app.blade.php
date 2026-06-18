@@ -26,10 +26,14 @@
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header position-relative">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div class="logo">
-                            <a href="index.html"><img src="./assets/compiled/svg/logo.svg" alt="Logo"
-                                    srcset=""></a>
-                        </div>
+                       <div class="logo">
+    <h5 class="fw-bold">
+        PT. METINCA
+    </h5>
+    <small>
+        Pembayaran Pajak Impor
+    </small>
+</div>
                         <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20"
@@ -68,27 +72,57 @@
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
-                        <li class="sidebar-title">Menu</li>
+                       <li class="sidebar-title">
+    Sistem Pajak Impor
+</li>
 
-                        <li class="sidebar-item {{ request()->routeIs('dashboard') ? 'active' : '' }} ">
-                            <a href="{{ route('dashboard') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
-                            </a>
+<!-- Dashboard -->
+<li class="sidebar-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+    <a href="{{ route('dashboard') }}" class="sidebar-link">
+        <i class="bi bi-speedometer2"></i>
+        <span>Dashboard</span>
+    </a>
+</li>
 
+<!-- Supplier -->
+<li class="sidebar-item {{ request()->routeIs('supplier.*') ? 'active' : '' }}">
+    <a href="{{ route('supplier.index') }}" class="sidebar-link">
+        <i class="bi bi-building"></i>
+        <span>Supplier</span>
+    </a>
+</li>
 
-                        </li>
+<!-- Purchase Order -->
+<li class="sidebar-item {{ request()->routeIs('purchase_order.*') ? 'active' : '' }}">
+    <a href="{{ route('purchase_order.index') }}" class="sidebar-link">
+        <i class="bi bi-file-earmark-text"></i>
+        <span>Purchase Order</span>
+    </a>
+</li>
 
-                        <li class="sidebar-item  ">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
-                                <span>standalone menu</span>
-                            </a>
+<!-- Pajak Impor -->
+<li class="sidebar-item {{ request()->routeIs('pajak_impor.*') ? 'active' : '' }}">
+    <a href="{{ route('pajak_impor.index') }}" class="sidebar-link">
+        <i class="bi bi-cash-stack"></i>
+        <span>Pembayaran Pajak Impor</span>
+    </a>
+</li>
 
+<!-- Tracking -->
+<li class="sidebar-item {{ request()->routeIs('tracking.*') ? 'active' : '' }}">
+    <a href="{{ route('tracking.index') }}" class="sidebar-link">
+        <i class="bi bi-search"></i>
+        <span>Tracking Pembayaran</span>
+    </a>
+</li>
 
-                        </li>
-
-                        <li class="sidebar-item  has-sub {{ request()->routeIs('machining.*') ? 'active' : '' }}">
+<!-- Laporan -->
+<li class="sidebar-item {{ request()->routeIs('laporan.*') ? 'active' : '' }}">
+    <a href="{{ route('laporan.index') }}" class="sidebar-link">
+        <i class="bi bi-file-bar-graph"></i>
+        <span>Laporan</span>
+    </a>
+</li>
                             <a href="#" class='sidebar-link '>
                                 <i class="bi bi-stack"></i>
                                 <span>Machining</span>

@@ -22,7 +22,7 @@
     <section class="py-5" id="divisions">
         <div class="container">
             {{-- <div class="text-center mb-5">
-                <h2 class="section-title">Our Divisions</h2>
+                <h2 class="section-title">Our Divisions arum cantik</h2>
                 <p class="text-muted">Click on a division to explore our processes and capabilities</p>
             </div> --}}
             

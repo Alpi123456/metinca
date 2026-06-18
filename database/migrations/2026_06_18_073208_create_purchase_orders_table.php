@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+{
+    Schema::create('purchase_orders', function (Blueprint $table) {
+
+        $table->id();
+
+        $table->string('no_po')->unique();
+
+        $table->foreignId('supplier_id')
+              ->constrained('suppliers')
+              ->cascadeOnDelete();
+
+        $table->date('tanggal_po');
+
+        $table->decimal('nilai_barang',18,2);
+
+        $table->string('currency')
+              ->default('IDR');
+
+        $table->decimal('nilai_cif',18,2);
+
+        $table->enum('status',[
+            'draft',
+            'pending',
+            'approved',
+            'completed'
+        ])->default('draft');
+
+        $table->timestamps();
+    });
+}
+ /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('purchase_orders');
+    }
+};

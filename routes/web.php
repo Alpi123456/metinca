@@ -83,24 +83,45 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware(['auth'])->group(function(){
 
-    //dashboard
+    // Dashboard
     Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+
+    // Supplier
+    Route::get('/supplier', function () {
+        return view('supplier.index');
+    })->name('supplier.index');
+
+    // Purchase Order
+    Route::get('/purchase-order', function () {
+        return view('purchase_order.index');
+    })->name('purchase_order.index');
+
+    // Pembayaran Pajak Impor
+    Route::get('/pajak-impor', function () {
+        return view('pajak_impor.index');
+    })->name('pajak_impor.index');
+
+    // Tracking Pembayaran
+    Route::get('/tracking-pembayaran', function () {
+        return view('tracking.index');
+    })->name('tracking.index');
+
+    // Laporan
+    Route::get('/laporan', function () {
+        return view('laporan.index');
+    })->name('laporan.index');
 
     //machining process
     Route::prefix('machining')->name('machining.')->group(function(){
 
-        //monitoring
         Route::prefix('monitoring')->name('monitoring.')->group(function(){
 
             Route::get('/',function(){
                 return view('machining.monitoring.index');
             })->name('index');
 
-
-
         });
 
     });
 
 });
-
