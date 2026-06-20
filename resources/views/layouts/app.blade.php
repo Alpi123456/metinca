@@ -94,7 +94,7 @@
 
 <!-- Purchase Order -->
 <li class="sidebar-item {{ request()->routeIs('purchase_order.*') ? 'active' : '' }}">
-    <a href="{{ route('purchase_order.index') }}" class="sidebar-link">
+    <a href="{{ route('purchase-order.index') }}" class="sidebar-link">
         <i class="bi bi-file-earmark-text"></i>
         <span>Purchase Order</span>
     </a>

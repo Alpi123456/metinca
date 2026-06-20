@@ -28,7 +28,15 @@ return new class extends Migration
         $table->string('currency')
               ->default('IDR');
 
-        $table->decimal('nilai_cif',18,2);
+        $table->string('nama_barang');
+
+$table->string('hs_code');
+
+$table->integer('qty');
+
+$table->decimal('harga_satuan',18,2);
+
+              $table->decimal('nilai_cif',18,2);
 
         $table->enum('status',[
             'draft',

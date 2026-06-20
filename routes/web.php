@@ -10,6 +10,8 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\PurchaseOrderController;
 
 Route::get('/',function(){
     if(Auth::check()){
@@ -87,15 +89,17 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 
     // Supplier
-    Route::get('/supplier', function () {
-        return view('supplier.index');
-    })->name('supplier.index');
+Route::get('/supplier',
+[
+    SupplierController::class,
+    'index'
+])->name('supplier.index');
 
     // Purchase Order
-    Route::get('/purchase-order', function () {
-        return view('purchase_order.index');
-    })->name('purchase_order.index');
-
+    Route::resource(
+    'purchase-order',
+    PurchaseOrderController::class
+);
     // Pembayaran Pajak Impor
     Route::get('/pajak-impor', function () {
         return view('pajak_impor.index');

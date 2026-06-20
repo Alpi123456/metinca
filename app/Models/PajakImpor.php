@@ -11,11 +11,10 @@ class PajakImpor extends Model
     protected $fillable = [
         'purchase_order_id',
         'bea_masuk',
-        'ppn_impor',
+        'ppn',
         'pph22',
         'total_pajak',
         'jatuh_tempo',
-        'tanggal_bayar',
         'status'
     ];
 

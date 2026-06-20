@@ -9,9 +9,47 @@
 </div>
 
 <div class="card">
+
     <div class="card-body">
-        Data supplier import akan ditampilkan di sini.
+
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Supplier</th>
+                    <th>Negara</th>
+                    <th>Email</th>
+                    <th>Telepon</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            @foreach($suppliers as $supplier)
+
+                <tr>
+
+                    <td>{{ $supplier->id }}</td>
+
+                    <td>{{ $supplier->nama_supplier }}</td>
+
+                    <td>{{ $supplier->negara }}</td>
+
+                    <td>{{ $supplier->email }}</td>
+
+                    <td>{{ $supplier->telepon }}</td>
+
+                </tr>
+
+            @endforeach
+
+            </tbody>
+
+        </table>
+
     </div>
+
 </div>
 
 @endsection
